@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MÁQUINA DE MEMES</title>
+    <link rel="stylesheet" href="estilo/style.css">
+    <link rel="shortcut icon" href="imagens/drake_meme.jpg"type="image/x-icon">
+</head>
+<body>
+    <header>
+        <picture>
+
+            <source media="(max-width: 650px)" srcset="imagens/p.png" type="image/png">
+            
+            <img src="imagens/logo.png" alt="imagem flexivel">
+        </picture>
+       
+    </header>
+   <main>
+        <aside class="container" >
+            <div id="photo-download">
+                <textarea class="tg-cima" name="" placeholder="Digite seu meme"aria-multiline="true"></textarea>
+                <div id="display-image"></div>
+                <textarea class="tg-baixo" name=""placeholder="Digite seu meme"aria-multiline="true"></textarea>
+            </div>
+
+            <div id="botoes">
+                <div id="escolha-imagens">
+                    <select id="memes-list"
+                    onchange="changeMemePicture(this.value)"></select>
+                    <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg">
+                </div>
+                <button class="download" id="download">
+                    <a href="#"><img src="imagens/btn_download.svg" alt=""></a>
+                </button>
+            </div>
+
+        </aside>
+
+     
+
+   </main>
+   <footer>
+        <div class="redes-sociais">
+            <p>Curtiu a máquina?<br> me segue nas redes!  </p>
+
+            <ul>
+                <li type="none"><a href="https://www.linkedin.com/in/danilopalacio-ux-ui/" target="_blank" ><img src="imagens/btn_linkedin.svg" alt=""></a></li>
+                <li type="none"><a href="https://github.com/Danilo-Palacio" target="_blank"><img src="imagens/btn_github.svg" alt=""></a></li>
+                <li type="none"><a href="https://www.behance.net/DaniloPalacio" target="_blank"><img src="imagens/btn_behance.svg" alt=""></a></li>
+            </ul>
+
+            <p id="creditos">Projeto feito na live da <br><a href="https://www.dio.me/" target="_blank" ><img src="imagens/diome-white.png" alt=""></a><br><a href="#">#maquinadememes</a></p>
+        </div>
+   </footer>
+
+   <script src="./javascript/scripts.js"></script>
+   <script src="./javascript/html2canvas.js"></script>
+   <script>
+
+    document.getElementById("download").onclick = () => {
+    const screenshotPrint = document.querySelector("#photo-download")
+    html2canvas(screenshotPrint).then((canvas)=> {
+        const base64Image = canvas.toDataURL("image/png")
+        let anchor = document.createElement("a")
+        anchor.setAttribute("href",base64Image)
+        anchor.setAttribute("download", "my-meme.png")
+        anchor.click()
+        anchor.remove()
+        })
+}
+   </script>
+</body>
+</html>

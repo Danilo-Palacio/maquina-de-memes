@@ -1,0 +1,173 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap');
+
+:root{
+    --amarelo: #FFE66D;
+    --laranja: #FF674D;
+    --font: 'Raleway', sans-serif;
+    --rosa:#CDC7E5;
+
+}
+*{ margin: 0; padding: 0;border: 0;box-sizing: border-box;
+
+    }
+body{
+    background-image: url(../imagens/background_joelma.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;    
+    justify-content: space-evenly;
+}
+
+
+/* Header*/
+header{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;    
+}
+picture{
+    width: 100%;
+}
+/* Main*/
+main{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+    .container{
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+        #photo-download{
+            border: 3px solid var(--amarelo);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            margin: 0px 0px 20px 0px;
+            border-radius: 15px;
+        }
+        #display-image{
+            height: 300px;
+            width: 300px;
+            background-position: center;
+            background-size: cover;
+        }
+        .tg-cima,.tg-baixo{
+            padding: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+            background-color: black;
+            width: 100%;
+        }
+        .tg-cima{
+            border-radius: 15px 15px 0 0;
+        }
+        .tg-baixo{
+            border-radius: 0 0 15px 15px;
+        }
+
+        /*botoes*/
+
+        #botoes{
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+            #escolha-imagens{
+                background-color: var(--rosa);
+                border-radius: 10px;
+                padding: 10px;
+                width: 200px;
+                display: flex;
+                flex-direction: column;  
+                margin-right: 10px;                  
+            }
+                #image-input{
+                    color: transparent;
+                    padding: 5px 0px 0px 0px ;
+                }
+            button.download{
+                width: 64px;
+                height: 64px;
+                /* border: 1px solid red; */
+                background-size: cover;
+                background-color: transparent;
+                padding: 5px;                
+                
+            }
+            button:hover{
+                background-color: transparent;
+                padding: 5px;
+                transform: scale(105%);
+                filter: contrast(170%);
+            }
+/* Footer*/
+footer{    
+    display: flex;
+    flex-direction: column;
+    column-gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+.redes-sociais{
+    width: 350px;
+    padding: 10px;
+}
+.redes-sociais>p{
+    color: var(--amarelo);
+    font-family: var(--font);
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+.redes-sociais>p>a{
+    color: var(--amarelo);
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px 0 100px 0;
+}
+ul>li>a>img{
+    
+    border: 2px solid var(--laranja);
+    border-radius: 50%;
+}
+ul>li:hover{
+    
+    transform: scale(105%);
+    filter: contrast(170%);
+}
+#creditos{
+    font-size: 15px;
+}
+#creditos>a>img{
+    text-align: center;
+    justify-items: center;
+    width: 100px;
+    padding: 5px;
+}
+#creditos>a>img:hover{
+    
+    transform: scale(105%);
+    filter: contrast(170%);
+}
